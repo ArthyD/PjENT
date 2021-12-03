@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+</script>
+</head>
+
+<body>
+Test 1 2 1 2
+<div id = 'configs'>
+	<form>
+	<ul id = 'list config'>
+{% for config in configJson %}
+<li>{{config}}
+{% for servo in configJson[config] %}
+catégorie {{servo}} : masse > {{configJson[config][servo][0]}}, taille > {{configJson[config][servo][1]}}
+{%endfor%}
+<button name = {{config}} type = "submit" value = {{config}}>Choisir cette configuration</button>
+</li>
+{% endfor %}
+</ul>
+</form>
+</div>
+
+</body>
+
+
+
+</html>
