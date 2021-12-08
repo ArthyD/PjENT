@@ -22,8 +22,8 @@
       <a class="navbar-brand" href="#">Tri</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class = "active"><a href="{{url_for('views.home')}}">Configurations</a></li>
-      <li><a href="{{url_for('views.controle')}}">Controle</a></li>
+      <li><a href="{{url_for('views.home')}}">Configurations</a></li>
+      <li class ="active"><a href="{{url_for('views.controle')}}">Controle</a></li>
     </ul>
   </div>
 </nav>
@@ -32,28 +32,14 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Tri des huîtres</h1>
-          <p>Choisir les catégories de tri</p>
+          <h1 class="display-3">Contrôle des huîtres</h1>
+          <p>Montre une photo des huîtres en train d'être triée</p>
           
         </div>
       </div>
       
-<div class = "container" id = 'configs'>
-	<form method = "POST">
-	<ul id = 'list config'>
-{% for config in configJson %}
-<li><h2>{{config}}</h2>
-<ul id ="categorie">
-{% for servo in configJson[config] %}
-<li>catégorie {{servo}} : masse > {{configJson[config][servo][0]}}, taille > {{configJson[config][servo][1]}}</li>
-{%endfor%}
-</ul>
-<button name = "button" class="btn btn-default btn-lg" type = "submit" value = {{config}}>Choisir cette configuration</button>
-</li>
-{% endfor %}
-</ul>
-</form>
-<h3>Configuration actuelle : {{current}}</h3>
+<div class = "container">
+	<img src="{{url_for('static', filename ='huitre.png')}}" class="img-responsive" alt="huitre triée" width="304" height="236"> 
 </div>
 
 </body>
