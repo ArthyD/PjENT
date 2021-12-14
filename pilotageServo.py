@@ -14,6 +14,7 @@ def ConvertStringToByte(src):
 def main(args):
     I2Cbus = smbus.SMBus(1)
     slaveAddress = I2C_SLAVE_ADDRESS
+    #Changer pour le servomoteur à piloter
     ByteToSend = ConvertStringToByte("servo1")
     I2Cbus.write_i2c_block_data(slaveAddress, 0x00, ByteToSend)
     time.sleep(0.5)
